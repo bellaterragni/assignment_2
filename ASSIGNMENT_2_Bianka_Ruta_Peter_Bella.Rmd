@@ -498,10 +498,6 @@ bestModel <- lmer(CHI_MLU ~ Visit * Diagnosis * verbalIQ1 + (1|Child.ID) + (0 + 
 # Set seed for reproducibility
 set.seed(7)
 
-# facorize visit number ### d
-#cleanData$Visit <- as.factor(cleanData$Visit)
-
-
 # creating different models
 models <- c("CHI_MLU ~ Visit * Diagnosis + (1|Child.ID)",
 "CHI_MLU ~ Visit * Diagnosis * verbalIQ1 + (1|Child.ID) + (0 + Visit|Child.ID)", "CHI_MLU ~ Visit * Diagnosis + verbalIQ1 + (1|Child.ID) + (0 + Visit|Child.ID)", "CHI_MLU ~ Diagnosis + Visit + Socialization1 + (1|Child.ID)", "CHI_MLU ~ Visit * Diagnosis + Visit * verbalIQ1 + Visit * Ados1 + (1|Child.ID) + (0 + Visit|Child.ID)")
